@@ -1,28 +1,23 @@
-/* Add Google Fonts import for Neue Haas Grotesk Display Pro */
-/* Removed Google Fonts import and changed to Helvetica */
 
 :root {
   --neon-cyan: #00ffff;
   --dark-bg: #0a0f32;
   --light-text: #ffffff;
   
-  /* These start at center screen so the site looks good before the mouse moves */
   --mouse-x: 50vw;
   --mouse-y: 50vh;
 }
 
-/* Global grain overlay – on top of background, under all content */
 .grain-overlay {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  z-index: 1; /* sits above background but under content (content uses z-index:2) */
+  z-index: 1; 
 
-  /* SVG Noise (encoded) */
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='1'/%3E%3C/svg%3E");
   background-repeat: repeat;
   background-size: 200px 200px;
-  opacity: 0.14; /* increase slightly for visibility */
+  opacity: 0.14; 
   mix-blend-mode: overlay;
   will-change: opacity;
 }
@@ -35,15 +30,14 @@ body {
   */
   background: radial-gradient(
     circle 800px at var(--mouse-x) var(--mouse-y), 
-    #000000 0%,      /* Core of the black mass */
-    #000000 20%,     /* Keeps the center solid black for a bit (The Mass) */
-    #0a0f32 50%,     /* Blends into your brand's dark blue */
-    #1a1f4a 100%     /* Slightly lighter blue edges to provide contrast */
+    #000000 0%,      
+    #000000 20%,     
+    #0a0f32 50%,     
+    #1a1f4a 100%     
   );
 
-  /* Keeps the effect locked to the screen */
   background-attachment: fixed;
-  background-color: #0a0f32; /* Fallback */
+  background-color: #0a0f32; 
   
   color: var(--light-text);
   font-family: Helvetica, "Helvetica Neue", Arial, sans-serif;
@@ -53,13 +47,11 @@ body {
   min-height: 100vh;
 }
 
-/* Make sure all content stays above the grain overlay (exclude the overlay itself) */
 body *:not(.grain-overlay) {
   position: relative;
   z-index: 2;
 }
 
-/* Fix hero spacing – remove top margin, keep space for navbar */
 .hero-section {
   margin-top: 0 !important;
   padding-top: 80px;
@@ -79,7 +71,6 @@ body *:not(.grain-overlay) {
   }
 }
 
-/* Scroll animation - elements fade in and slide up as they scroll into view */
 @keyframes scrollIn {
   from {
     opacity: 0;
@@ -156,7 +147,6 @@ body *:not(.grain-overlay) {
   transform: scale(0.98);
 }
 
-/* Navbar Styling */
 .navbar {
   transition: all 0.3s ease;
   position: relative;
@@ -212,18 +202,15 @@ body *:not(.grain-overlay) {
   color: rgba(255, 255, 255, 0.5);
 }
 
-/* Error Styling */
 .form-control.is-invalid {
   border-color: #ff6b6b !important;
   box-shadow: 0 0 15px rgba(255, 107, 107, 0.3) !important;
 }
 
-/* Smooth Scroll */
 html {
   scroll-behavior: smooth;
 }
 
-/* Animation Keyframes */
 @keyframes glow-pulse {
   0%,
   100% {
@@ -238,8 +225,6 @@ html {
   animation: glow-pulse 3s ease-in-out infinite;
 }
 
-/* Responsive Adjustments */
-/* Updated testimonials bento grid responsive behavior */
 @media (max-width: 1200px) {
   div[style*="grid-template-columns: repeat(4, 1fr)"] {
     grid-template-columns: repeat(3, 1fr) !important;
@@ -305,7 +290,6 @@ html {
   }
 }
 
-/* Button Group Hover Effects */
 .btn {
   transition: all 0.3s ease;
   position: relative;
@@ -316,7 +300,6 @@ html {
   transform: translateY(-2px);
 }
 
-/* Text Selection */
 ::selection {
   background: rgba(0, 255, 255, 0.3);
   color: var(--light-text);
