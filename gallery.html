@@ -14,7 +14,7 @@
     />
     <link rel="stylesheet" href="styles.css" />
     <style>
-      /* Masonry gallery layout with custom CSS Grid */
+
       .gallery-masonry {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -54,14 +54,12 @@
         border-color: #00ff88;
       }
 
-      /* Updated gallery item hover styles for new layout */
       .gallery-hover:hover {
         box-shadow: 0 0 40px rgba(0, 102, 255, 0.8);
         transform: translateY(-5px);
         border-color: #00ffff;
       }
 
-      /* Bento grid layout with asymmetric sizing */
       .gallery-bento {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
@@ -70,7 +68,6 @@
         margin-top: 40px;
       }
 
-      /* Specific grid positioning for bento effect */
       .gallery-bento .gallery-item:nth-child(1) {
         grid-column: span 1;
         grid-row: span 2;
@@ -101,7 +98,6 @@
         grid-row: span 1;
       }
 
-      /* Responsive bento grid for tablets */
       @media (max-width: 1024px) {
         .gallery-bento {
           grid-template-columns: repeat(3, 1fr);
@@ -117,7 +113,6 @@
         }
       }
 
-      /* Responsive bento grid for mobile */
       @media (max-width: 768px) {
         .gallery-bento {
           grid-template-columns: repeat(2, 1fr);
@@ -140,7 +135,7 @@
     </style>
   </head>
   <body>
-    <!-- Navbar -->
+
     <nav
       class="navbar navbar-expand-lg navbar-dark fixed-top"
       style="
@@ -240,7 +235,6 @@
       </div>
     </nav>
 
-    <!-- Gallery Section -->
     <section
       style="
         padding: 80px 40px;
@@ -263,7 +257,7 @@
         >
           Gallery
         </h1>
-        <!-- added horizontal divider line under Gallery title -->
+
         <div
           style="
             width: 100%;
@@ -274,7 +268,7 @@
           "
         ></div>
 
-        <!-- redesigned masonry grid with 5 items - specific heights and spans for staggered layout -->
+
         <div class="gallery-bento">
           <div class="gallery-item">
             <img
@@ -322,7 +316,7 @@
       </div>
     </section>
 
-    <!-- Footer -->
+
     <footer
       style="
         padding: 50px 0;
